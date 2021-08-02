@@ -1,4 +1,12 @@
-<div>
-    <h3>{{ medic.name }}</h3>
-    <p>{{ medic.description }}</p>
+<div class="medic-box">
+    <div class="medic-box__image">
+        <img src="assets/img/image.png">
+    </div>
+    <div class="medic-box__name">
+        {{ medic.name }}
+    </div>
+    <div class="medic-box__buttons">
+        <div class="btn btn--price">{{ medic.prix }} €</div>
+        <div class="btn btn--add"><i class="fas fa-cart-plus"></i> Ajouter au panier</div>
+    </div>
 </div>

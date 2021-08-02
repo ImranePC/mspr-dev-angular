@@ -1,7 +1,7 @@
-export interface Medic {
+export interface IMedic {
     id: number,
     name: string,
     prix: number,
     description: string,
-    image_id: number,
+    category_id: number,
 }

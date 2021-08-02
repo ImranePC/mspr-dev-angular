@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CustomResponse } from '../models/customresponse';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class SlimapiService {
   constructor(private http: HttpClient) { }
 
   getMedics() {
-    return this.http.get(this.BASE_URL + "/medics");
+    return this.http.get<CustomResponse>(this.BASE_URL + "/medics");
   }
 
 }

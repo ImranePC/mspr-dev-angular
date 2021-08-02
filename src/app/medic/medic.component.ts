@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Medic } from '../models/medic';
+import { IMedic } from '../models/medic';
 
 @Component({
   selector: 'app-medic',
@@ -7,9 +7,10 @@ import { Medic } from '../models/medic';
   styleUrls: ['./medic.component.css']
 })
 export class MedicComponent implements OnInit {
-  @Input() medic: any; 
+  @Input()medic!: IMedic;
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

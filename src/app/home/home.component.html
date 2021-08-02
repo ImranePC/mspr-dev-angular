@@ -1,4 +1,6 @@
-<p>home works!</p>
-<div *ngFor="let medic of medics">
-    <app-medic [medic]="medic"></app-medic>
+<app-topbar></app-topbar>
+<div class="container container--flex">
+    <div class="container__elem" *ngFor="let medic of medics">
+        <app-medic [medic]="medic"></app-medic>
+    </div>
 </div>

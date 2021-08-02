@@ -1,0 +1,48 @@
+.medic-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 5px 8px rgb(221, 221, 221);
+}
+
+.medic-box__image img {
+    width: 100%;
+}
+
+.medic-box__name {
+    padding: 5px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.medic-box__buttons {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    border-radius: 25px;
+}
+
+.btn--price {
+    background-color: rgb(165, 165, 165);
+    padding: 8px;
+    color: #fff;
+}
+
+.btn--add {
+    background-color: var(--theme-green);
+    color: #fff;
+    padding: 8px;
+    transition: 0.2s;
+}
+
+.btn--add:hover {
+    cursor: pointer;
+    box-shadow: inset 0 50px rgba(0, 0, 0, 0.2);
+}

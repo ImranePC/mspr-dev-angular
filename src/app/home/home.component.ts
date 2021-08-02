@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IMedic } from '../models/medic';
 import { SlimapiService } from '../services/slimapi.service';
 
 @Component({
@@ -7,16 +8,13 @@ import { SlimapiService } from '../services/slimapi.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  medics: any;
+  medics: IMedic[] = [];
 
   constructor(private slimapi: SlimapiService) { }
 
   ngOnInit(): void {
     this.slimapi.getMedics().subscribe(content => {
-      // A refactoriser
-      this.medics = content;
-      this.medics = this.medics.data;
-      console.log(this.medics);
+      this.medics = content.data;
     })
 
   }
