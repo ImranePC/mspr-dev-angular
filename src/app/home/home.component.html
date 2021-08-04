@@ -1,6 +1,8 @@
 <app-topbar></app-topbar>
 <div class="container container--flex">
     <div class="container__elem" *ngFor="let medic of medics">
-        <app-medic [medic]="medic"></app-medic>
+        <app-medic [medic]="medic" (actionPanier)="actionOnPanier($event)"></app-medic>
     </div>
 </div>
+<div style="height: 100px;"></div>
+<app-panier [panier]="medicsPanier" [quantityPanier]="quantityPanier"></app-panier>

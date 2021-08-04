@@ -1,0 +1,38 @@
+<div class="container" #recapBox>
+    <div class="panier">
+        <div class="panier__element">
+            <div class="btn btn--spe">
+                {{ panier.length }} article<ng-container *ngIf="panier.length > 1">s</ng-container>
+            </div>
+        </div>
+        <div class="panier__element">
+            <div [ngClass]="{'disabled': panier.length < 1}" class="btn" (click)="validate()"><i class="fas fa-shopping-cart"></i> Voir le panier</div>
+        </div>
+    </div>
+</div>
+
+<div class="container--full" [ngStyle]="!showPurchasePage ? {'transform' : 'translateX(-100%)'} : {'transform' : 'translateX(0%)'}" #panierProcess>
+    <div class="exit" (click)="switchRecapMode()"><i class="fas fa-arrow-circle-left"></i> Retour</div>
+    <div class="table">
+        <div class="table__title">Votre commande</div>
+        <div *ngFor="let medic of panier; let index = index" class="table__element" [ngClass]="{'table__element--alt': index % 2 == 0}">
+            <div>
+                {{ medic.name }} - <span class="note"> {{ medic.prix }}€ unité </span><br>
+                <ng-container *ngIf="prices[index] == undefined">{{ medic.prix }}</ng-container>
+                <ng-container *ngIf="prices[index] != undefined">{{ prices[index] }}</ng-container> €
+            </div>
+            <div>
+                <app-btn-quantity [index]="index" (updateQuantity)="setQuantity($event)"></app-btn-quantity>
+            </div>
+        </div>
+    </div>
+
+    <div class="validate-box">
+        <div class="validate-box__elem price">
+            <div><b>Total : {{ totalPrice }} €</b></div>
+        </div>
+        <div class="validate-box__elem confirm" [ngClass]="{'disabled': panier.length < 1}" (click)="sendOrder()">
+            Confirmer la commande
+        </div>
+    </div>
+</div>

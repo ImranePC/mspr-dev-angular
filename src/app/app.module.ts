@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MedicComponent } from './medic/medic.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { PanierComponent } from './panier/panier.component';
+import { BtnQuantityComponent } from './btn-quantity/btn-quantity.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { TopbarComponent } from './topbar/topbar.component';
     HomeComponent,
     LoginComponent,
     MedicComponent,
-    TopbarComponent
+    TopbarComponent,
+    PanierComponent,
+    BtnQuantityComponent
   ],
   imports: [
     BrowserModule,

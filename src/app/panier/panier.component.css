@@ -1,0 +1,118 @@
+.container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    overflow-x: hidden;
+    box-shadow: 0 -5px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.container--full {
+    z-index: 1;
+    background: #eee;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    overflow-x: hidden;
+}
+
+.panier {
+    background-color: #fff;
+    display: flex;
+    padding: 15px;
+}
+
+.panier__element {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+}
+
+.btn {
+    margin: 0 15px 0 15px;
+    background-color: #1bac6f;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+}
+
+.btn--spe {
+    margin: 0;
+    border-radius: 0;
+    white-space: nowrap;
+    background: white;
+    color: black;
+    font-size: 1.1em;
+}
+
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.table__title {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(92, 92, 92);
+    margin-bottom: 10px;
+}
+
+.exit {
+    padding: 8px;
+    color: rgb(115, 176, 255);
+    font-size: 1.2em;
+}
+
+.note {
+    font-size: 0.75em;
+    font-weight: lighter;
+    color: grey;
+}
+
+.table__element {
+    background-color: #eee;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.05em;
+    line-height: 1.05em;
+}
+
+.table__element--alt {
+    background-color: #fff;
+}
+
+.validate-box {
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 -5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.validate-box__elem {
+    white-space: nowrap;
+    padding: 11px;
+}
+
+.price {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.confirm {
+    color: white;
+    border-radius: 25px;
+    margin: 15px;
+    background-color: rgb(51, 133, 255);
+}

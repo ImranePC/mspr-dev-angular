@@ -1,0 +1,32 @@
+.btn-number {
+    display: flex;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 3px 8px rgb(231, 231, 231);
+}
+
+.btn-number__elem {
+    padding: 5px;
+    width: 20px;
+    background-color: #eee;
+    font-weight: bold;
+    color: #252525;
+    font-size: 1.1em;
+}
+
+.btn-number__minus {
+    border-radius: 25px 0 0 25px;
+}
+
+.btn-number__plus {
+    border-radius: 0 25px 25px 0;
+}
+
+input[type=number] {
+    text-align: center;
+    outline: 0;
+    border: 0;
+    padding: 5px;
+    width: 50px;
+    font-size: 1.1em;
+}
