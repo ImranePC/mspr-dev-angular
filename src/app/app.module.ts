@@ -10,6 +10,7 @@ import { MedicComponent } from './medic/medic.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { PanierComponent } from './panier/panier.component';
 import { BtnQuantityComponent } from './btn-quantity/btn-quantity.component';
+import { CalculatriceComponent } from './calculatrice/calculatrice.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BtnQuantityComponent } from './btn-quantity/btn-quantity.component';
     MedicComponent,
     TopbarComponent,
     PanierComponent,
-    BtnQuantityComponent
+    BtnQuantityComponent,
+    CalculatriceComponent
   ],
   imports: [
     BrowserModule,
