@@ -17,10 +17,14 @@ export class SlimapiService {
     return this.http.get<CustomResponse>(this.BASE_URL + "/medics");
   }
 
+  //postOrder(forms: FormData[]) {
+  //  forms.map(form => this.http.post<any>(this.BASE_URL + "/order", form))
+//
+  //  return Promise.all(forms);
+  //}
+
   async postOrder(form: FormData) {
-    return this.http.post<any>(this.BASE_URL + "/order", form).subscribe(data => {
-      console.log(data);
-    });
+    await this.http.post<any>(this.BASE_URL + "/order", form).toPromise();
   }
 
 }

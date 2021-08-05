@@ -14,7 +14,9 @@ export class PanierComponent implements OnInit {
   @ViewChild('panierProcess') processBox!: ElementRef;
   prices: number[] = [];
   totalPrice: number = 0;
-  showPurchasePage: boolean = true;
+  showPurchasePage: boolean = false;
+  showLoadingPage: boolean = false;
+  loadingComplete: boolean = false;
 
   constructor(private slimapi: SlimapiService) {
     
@@ -41,7 +43,6 @@ export class PanierComponent implements OnInit {
   }
 
   updateTotalPrice(): void {
-    console.log('Update');
     this.prices = [];
     for (let i = 0; i < this.quantityPanier.length ; i++) {
       let price = this.panier[i].prix;
@@ -58,12 +59,13 @@ export class PanierComponent implements OnInit {
   sendOrder(): void {
     // Send order for each medic
     let officineId = 1;
+    this.showLoadingPage = true;
 
     for (let i = 0; i < this.quantityPanier.length; i++) {
       // Init
-      let form = new FormData();
       let amount = this.quantityPanier[i];
       let medicId = this.panier[i].id;
+      let form = new FormData();
 
       // Create form
       form.set('amount', amount.toString());
@@ -71,9 +73,16 @@ export class PanierComponent implements OnInit {
       form.set('medic_id', medicId.toString());
       
       // Post
-      this.slimapi.postOrder(form);
+      this.slimapi.postOrder(form).then(a => {
+        if (i == this.quantityPanier.length - 1) {
+          this.loadingComplete = true; 
+        }
+      }).catch(e => console.error('API Error'));
     }
+  }
 
+  resetShop(): void {
+    window.location.reload();
   }
 
 }

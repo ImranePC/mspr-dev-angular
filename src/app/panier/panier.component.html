@@ -35,4 +35,12 @@
             Confirmer la commande
         </div>
     </div>
+
+    <div *ngIf="showLoadingPage" class="loading-screen">
+        <div *ngIf="!loadingComplete" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        <div *ngIf="loadingComplete" class="loading-screen__validation">
+            <div><b>Commande validée ! ✅</b></div>
+            <div class="btn" (click)="resetShop()">Retour</div>
+        </div>
+    </div>
 </div>
