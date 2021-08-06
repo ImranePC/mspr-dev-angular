@@ -23,8 +23,12 @@ export class SlimapiService {
   //  return Promise.all(forms);
   //}
 
-  async postOrder(form: FormData) {
-    await this.http.post<any>(this.BASE_URL + "/order", form).toPromise();
+  async postOrder(orderForm: FormData) {
+    await this.http.post<any>(this.BASE_URL + "/order", orderForm).toPromise();
+  }
+
+  async postConn(userForm: FormData) {
+    await this.http.post<any>(this.BASE_URL + "/user/auth", userForm).toPromise();
   }
 
 }

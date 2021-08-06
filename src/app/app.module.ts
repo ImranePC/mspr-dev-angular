@@ -11,6 +11,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { PanierComponent } from './panier/panier.component';
 import { BtnQuantityComponent } from './btn-quantity/btn-quantity.component';
 import { CalculatriceComponent } from './calculatrice/calculatrice.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CalculatriceComponent } from './calculatrice/calculatrice.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
