@@ -5,10 +5,10 @@
             {{ error }}
         </div>
         <div>
-            <input [(ngModel)]="user.name" type="text" placeholder="Nom d'utilisateur" required>
+            <input [(ngModel)]="login.name" name="username" type="text" placeholder="Nom d'utilisateur" required>
         </div> 
         <div>
-            <input [(ngModel)]="user.password" type="password" placeholder="Mot de passe" required>
+            <input [(ngModel)]="login.password" name="password" type="password" placeholder="Mot de passe" required>
         </div>
         <div>
             <input (click)="validateForm()" type="submit" value="Valider">

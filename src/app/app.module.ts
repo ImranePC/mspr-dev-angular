@@ -12,6 +12,8 @@ import { PanierComponent } from './panier/panier.component';
 import { BtnQuantityComponent } from './btn-quantity/btn-quantity.component';
 import { CalculatriceComponent } from './calculatrice/calculatrice.component';
 import { FormsModule } from '@angular/forms';
+import { Globals } from './globals';
+import { ProfilComponent } from './profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     TopbarComponent,
     PanierComponent,
     BtnQuantityComponent,
-    CalculatriceComponent
+    CalculatriceComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

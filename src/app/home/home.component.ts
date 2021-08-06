@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { Globals } from '../globals';
 import { IMedic } from '../models/medic';
 import { PanierComponent } from '../panier/panier.component';
 import { SlimapiService } from '../services/slimapi.service';
@@ -14,9 +16,11 @@ export class HomeComponent implements OnInit {
   medicsPanier: IMedic[] = [];
   quantityPanier: number[] = [];
 
-  constructor(private slimapi: SlimapiService) { }
+  constructor(private slimapi: SlimapiService, private globals: Globals, private router: Router) { }
 
   ngOnInit(): void {
+    this.globals.isConnected();
+
     this.slimapi.getMedics().subscribe(content => {
       this.medics = content.data;
     })
