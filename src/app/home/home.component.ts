@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Host, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Globals } from '../globals';
 import { IMedic } from '../models/medic';
@@ -12,6 +12,7 @@ import { SlimapiService } from '../services/slimapi.service';
 })
 export class HomeComponent implements OnInit {
   @ViewChild(PanierComponent) panierElement!:PanierComponent;
+  @ViewChild('FloatBtn') floatBtn!: ElementRef;
   medics: IMedic[] = [];
   medicsPanier: IMedic[] = [];
   quantityPanier: number[] = [];
@@ -37,6 +38,11 @@ export class HomeComponent implements OnInit {
       this.quantityPanier.splice(this.medicsPanier.indexOf(medic), 1);
       this.medicsPanier.splice(this.medicsPanier.indexOf(medic), 1);
     }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: any) {
+    if (window.pageYOffset < 50) this.floatBtn.nativeElement.style.marginTop = 50 - window.pageYOffset + "px";
   }
 
 }

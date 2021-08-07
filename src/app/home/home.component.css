@@ -12,3 +12,16 @@
 .container__elem {
     margin: 15px;
 }
+
+.float-btn {
+    z-index: 1;
+    position: fixed;
+    bottom: 50%;
+    right: 20px;
+    top: 20px;
+    margin-top: 50px;
+}
+
+.float-btn button {
+    background-color: var(--theme-green);
+}
