@@ -1,6 +1,11 @@
-<p>profil works!</p>
-<li>{{ userData.username }}</li>
-<li>{{ userData.email }}</li>
-<li>{{ userData.created_at }}</li>
-<button (click)="userDisconnect()">Se déconnecter</button>
-<a [routerLink]="'/home'">Retour</a>
+<div class="container">
+    <div class="profil">
+        <div class="profil__body">
+            <div class="alt"><span class="discret"> Nom d'utilisateur</span> {{ userData.username }}</div>
+            <div><span class="discret"> E-mail</span> {{ userData.email }}</div>
+            <div class="alt"><span class="discret"> Date d'inscription</span> {{ userData.created_at | date:'dd/MM/yyyy' }}</div>
+            <button (click)="userDisconnect()" mat-flat-button>Se déconnecter</button> 
+            <a [routerLink]="'/home'" mat-flat-button>Retour</a>
+        </div>
+    </div>
+</div>

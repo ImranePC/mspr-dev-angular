@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { Globals } from '../globals';
 import { Login } from '../models/login';
 import { SlimapiService } from '../services/slimapi.service';
-
+ 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 
 export class LoginComponent implements OnInit {
@@ -56,6 +56,10 @@ export class LoginComponent implements OnInit {
     }).catch(e => console.error(e));
 
     return false;
+  }
+
+  removeError():void {
+    this.error = '';
   }
 
 }

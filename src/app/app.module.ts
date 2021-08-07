@@ -14,6 +14,9 @@ import { CalculatriceComponent } from './calculatrice/calculatrice.component';
 import { FormsModule } from '@angular/forms';
 import { Globals } from './globals';
 import { ProfilComponent } from './profil/profil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -29,9 +32,12 @@ import { ProfilComponent } from './profil/profil.component';
   ],
   imports: [
     BrowserModule,
+    MatInputModule,
+    MatButtonModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [Globals],
   bootstrap: [AppComponent]

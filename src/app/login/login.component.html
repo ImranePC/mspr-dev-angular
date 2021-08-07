@@ -1,17 +1,26 @@
-<p>login</p>
-<div class="container">
-    <div class="form">
-        <div *ngIf="error">
+<div class="container m-t">
+    <div *ngIf="error" class="alert-box">
+        <div>
             {{ error }}
         </div>
-        <div>
-            <input [(ngModel)]="login.name" name="username" type="text" placeholder="Nom d'utilisateur" required>
-        </div> 
-        <div>
-            <input [(ngModel)]="login.password" name="password" type="password" placeholder="Mot de passe" required>
+    </div>
+
+    <div class="form">
+        <div class="top">
+            Connexion
         </div>
-        <div>
-            <input (click)="validateForm()" type="submit" value="Valider">
-        </div>        
+        <div class="form__body">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nom d'utilisateur</mat-label>
+                <input matInput [(ngModel)]="login.name" name="username" placeholder="Nom d'utilisateur" required>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput [(ngModel)]="login.password" type="password" name="password" placeholder="Mot de passe" required>
+            </mat-form-field>
+
+            <button (click)="validateForm()" mat-flat-button>Valider</button>            
+        </div>
     </div>
 </div>
