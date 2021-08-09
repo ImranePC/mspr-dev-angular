@@ -19,6 +19,13 @@
     font-size: 1.2em;
 }
 
+.medic-box__description {
+    font-size: 0.75em;
+    color: grey;
+    padding: 0px 5px 0px 5px;
+    text-align: justify;
+}
+
 .medic-box__buttons {
     padding: 10px;
     display: flex;

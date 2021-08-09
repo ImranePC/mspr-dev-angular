@@ -4,6 +4,7 @@
     height: 50px;
     background: var(--theme-green);
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .topbar__center {

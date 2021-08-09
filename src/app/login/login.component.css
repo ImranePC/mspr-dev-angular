@@ -5,14 +5,6 @@
 
 .m-t { margin-top: 50px }
 
-.top {
-    background-color: var(--theme-green);
-    padding: 20px;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-}
-
 .alert-box {
     width: 30%;
     margin: auto;

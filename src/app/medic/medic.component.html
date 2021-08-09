@@ -5,6 +5,9 @@
     <div class="medic-box__name">
         {{ medic.name }}
     </div>
+    <div class="medic-box__description">
+        {{ (medic.description.length > 150) ? (medic.description | slice:0:150)+'...':(medic.description) }}
+    </div>
     <div class="medic-box__buttons">
         <div class="btn btn--price">{{ medic.prix }} €</div>
         <div *ngIf="!clicked" class="btn btn--react btn--add" (click)="action()"><i class="fas fa-cart-plus"></i> Ajouter au panier</div>

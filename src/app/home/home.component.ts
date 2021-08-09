@@ -13,7 +13,7 @@ import { SlimapiService } from '../services/slimapi.service';
 export class HomeComponent implements OnInit {
   @ViewChild(PanierComponent) panierElement!:PanierComponent;
   @ViewChild('FloatBtn') floatBtn!: ElementRef;
-  medics: IMedic[] = [];
+  medics!: IMedic[];
   medicsPanier: IMedic[] = [];
   quantityPanier: number[] = [];
 
@@ -42,7 +42,11 @@ export class HomeComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
-    if (window.pageYOffset < 50) this.floatBtn.nativeElement.style.marginTop = 50 - window.pageYOffset + "px";
+    if (window.pageYOffset < 50) {
+      this.floatBtn.nativeElement.style.marginTop = 50 - window.pageYOffset + "px"
+    } else {
+      this.floatBtn.nativeElement.style.marginTop = 0;
+    };
   }
 
 }

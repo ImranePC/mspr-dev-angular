@@ -17,6 +17,10 @@ import { ProfilComponent } from './profil/profil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { OfficineComponent } from './officine/officine.component';
+import { OfficineChangeComponent } from './officine-change/officine-change.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -28,15 +32,19 @@ import { MatButtonModule } from '@angular/material/button';
     PanierComponent,
     BtnQuantityComponent,
     CalculatriceComponent,
-    ProfilComponent
+    ProfilComponent,
+    OfficineComponent,
+    OfficineChangeComponent
   ],
   imports: [
     BrowserModule,
     MatInputModule,
     MatButtonModule,
+    MatSelectModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    MatTableModule,
     BrowserAnimationsModule
   ],
   providers: [Globals],

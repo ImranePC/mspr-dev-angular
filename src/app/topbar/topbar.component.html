@@ -1,11 +1,12 @@
 <div class="topbar">
     <div class="topbar__left">
-        <div class="topbar__element topbar__element--link">[Nom pharmacie]</div>
+        <div class="topbar__element topbar__element--link" [routerLink]="'/officine'">Ma pharmacie</div>
     </div>
     <div class="topbar__center">
         <div class="topbar__element topbar__element--title"></div>
     </div>
     <div class="topbar__right">
         <div [routerLink]="'/profil'" class="topbar__element topbar__element--link">Profil</div>
+        <div [routerLink]="'/home'" class="topbar__element topbar__element--link">Shop</div>
     </div>
 </div>
