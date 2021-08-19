@@ -1,6 +1,6 @@
 <app-topbar></app-topbar>
 <div class="container">
-    <div class="sub-container" style="padding: 0">
+    <div class="sub-container">
         <mat-form-field appearance="fill">
             <mat-label>Selectionez une pharmacie</mat-label>
             <mat-select [(value)]="selectedId">
@@ -11,6 +11,16 @@
         </mat-form-field>            
         <div class="sub-container__body p3">
             <button (click)="validateSelection()" mat-flat-button>Valider</button>
+        </div>
+    </div>
+    <div class="sub-container mt">
+        <div style="padding: 15px; color: grey">
+            Selection depuis la carte
+            <div class="map-box">
+                <div style="margin: auto">
+                    mettre la carte ici
+                </div>
+            </div>
         </div>
     </div>
 </div>
