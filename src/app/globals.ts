@@ -46,6 +46,10 @@ export class Globals {
     isConnected(redirectToHome: boolean = false): void {
         if (this.connected.state == true) {
             if (redirectToHome == true) this.router.navigate(['/home']);
+            if (this.selectedOfficineId == undefined) {
+                console.log('No officine selected');
+                this.router.navigate(['/select-officine']);
+            }
         } else {
             this.router.navigate(['/login']);
         }

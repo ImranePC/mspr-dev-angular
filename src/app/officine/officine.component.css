@@ -7,6 +7,10 @@
     margin-top: 30px;
 }
 
+.txt-sm {
+    font-size: 0.75em;
+}
+
 @media (max-width: 600px) {
     .profil { width: 90% }
 }
