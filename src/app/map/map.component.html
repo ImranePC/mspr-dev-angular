@@ -1,1 +1,17 @@
-<p>map works!</p>
+<div class="places">
+    <div class="map">
+      <agm-map [latitude]="lat" [longitude]="long" [zoom]="5">
+        <agm-marker
+          *ngFor="let p of places" 
+          [latitude]="p.location_lat" 
+          [longitude]="p.location_lng" 
+          [markerClickable]="true" 
+          (markerClick)="setSelection(p.id)"
+          >
+          <agm-info-window #infoWindow>
+            {{ p.name }}
+          </agm-info-window>
+        </agm-marker>
+      </agm-map>
+    </div>
+</div>

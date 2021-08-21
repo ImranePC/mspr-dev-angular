@@ -13,14 +13,11 @@
             <button [disabled]="!selectedId" (click)="validateSelection()" mat-flat-button>Valider</button>
         </div>
     </div>
+
     <div class="sub-container mt">
         <div style="padding: 15px; color: grey">
             Selection depuis la carte
-            <div class="map-box">
-                <div style="margin: auto">
-                    mettre la carte ici
-                </div>
-            </div>
+            <app-map (onMarkerClick)="setSelectedId($event)"></app-map>
         </div>
     </div>
 </div>

@@ -24,4 +24,8 @@ export class OfficineChangeComponent implements OnInit {
     this.router.navigate(['/officine']);
   }
 
+  setSelectedId(value: any) {
+    this.selectedId = value;
+  }
+
 }
