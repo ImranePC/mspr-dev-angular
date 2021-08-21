@@ -11,24 +11,28 @@ export class Globals {
         user: []
     }
 
-
     constructor (private router: Router, private slimapi: SlimapiService) {
         // Load if already exist
         if (localStorage.getItem("connection") != null) {
             let data: any = localStorage.getItem("connection");
             this.connected = JSON.parse(data);
         }
-    
-        if (this.connected.state == true) {
-            this.slimapi.getClosestOfficine().subscribe(result => this.selectedOfficineId = result.data.id);
+
+        if (localStorage.getItem("officineId") != null) {
+            this.selectedOfficineId = Number(localStorage.getItem("officineId"));
         }
+    
+        //if (this.connected.state == true) {
+        //    this.slimapi.getClosestOfficine().subscribe(result => this.selectedOfficineId = result.data.id);
+        //}
     }
 
     getSelectedOfficineId(): number {
         return this.selectedOfficineId;
     }
 
-    setSelectedOfficineId(id: number) {
+    setSelectedOfficineId(id: number):void {
+        localStorage.setItem("officineId", String(id));
         this.selectedOfficineId = id;
     }
 
@@ -39,7 +43,7 @@ export class Globals {
     }
 
     unsetConnectionValues(): void {
-        localStorage.clear();
+        localStorage.removeItem("connection");
         this.connected.state = false;
     }
 

@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Globals } from '../globals';
 import { IMedic } from '../models/medic';
 import { SlimapiService } from '../services/slimapi.service';
 
@@ -18,7 +19,7 @@ export class PanierComponent implements OnInit {
   showLoadingPage: boolean = false;
   loadingComplete: boolean = false;
 
-  constructor(private slimapi: SlimapiService) {
+  constructor(private slimapi: SlimapiService, private global: Globals) {
     
   }
 
@@ -58,7 +59,7 @@ export class PanierComponent implements OnInit {
 
   sendOrder(): void {
     // Send order for each medic
-    let officineId = 1;
+    let officineId = this.global.getSelectedOfficineId();
     this.showLoadingPage = true;
 
     for (let i = 0; i < this.quantityPanier.length; i++) {
