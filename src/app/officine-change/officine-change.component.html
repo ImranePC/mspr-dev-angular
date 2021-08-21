@@ -10,7 +10,7 @@
             </mat-select>
         </mat-form-field>            
         <div class="sub-container__body p3">
-            <button (click)="validateSelection()" mat-flat-button>Valider</button>
+            <button [disabled]="!selectedId" (click)="validateSelection()" mat-flat-button>Valider</button>
         </div>
     </div>
     <div class="sub-container mt">
