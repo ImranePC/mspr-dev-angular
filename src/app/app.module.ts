@@ -21,6 +21,13 @@ import { OfficineComponent } from './officine/officine.component';
 import { OfficineChangeComponent } from './officine-change/officine-change.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MapComponent } from './map/map.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AgmCoreModule } from '@agm/core';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,10 +41,18 @@ import { MatTableModule } from '@angular/material/table';
     CalculatriceComponent,
     ProfilComponent,
     OfficineComponent,
-    OfficineChangeComponent
+    OfficineChangeComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC7IwiudWCwF5MaJMMAVyWDITbGpa-R67c',
+      libraries: ['places']
+    }),
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
@@ -45,7 +60,7 @@ import { MatTableModule } from '@angular/material/table';
     AppRoutingModule,
     FormsModule,
     MatTableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [Globals],
   bootstrap: [AppComponent]
