@@ -3,7 +3,9 @@
   "projects": {
     "mspr-dev-angular": {
       "name": "mspr-dev-angular",
-      "integrations": {},
+      "integrations": {
+        "capacitor": {}
+      },
       "type": "angular"
     }
   }

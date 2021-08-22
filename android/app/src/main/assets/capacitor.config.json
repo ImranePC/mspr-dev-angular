@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "mspr-dev-angular",
+	"webDir": "dist/mspr-dev-angular",
+	"bundledWebRuntime": false
+}
