@@ -1,0 +1,10 @@
+{
+  "defaultProject": "mspr-dev-angular",
+  "projects": {
+    "mspr-dev-angular": {
+      "name": "mspr-dev-angular",
+      "integrations": {},
+      "type": "angular"
+    }
+  }
+}
