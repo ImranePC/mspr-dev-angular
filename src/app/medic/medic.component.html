@@ -9,7 +9,8 @@
         {{ (medic.description.length > 150) ? (medic.description | slice:0:150)+'...':(medic.description) }}
     </div>
     <div class="medic-box__buttons">
-        <div class="btn btn--price">{{ medic.prix }} €</div>
+        <div *ngIf="medic.discount == 0" class="btn btn--price">{{ medic.prix }} €</div>
+        <div *ngIf="medic.discount > 0" class="btn btn--discount"><span style="text-decoration: line-through">{{ medic.prix }}</span> {{ medic.prix * (1 - medic.discount) | number: '1.1-2' }} € <span style="font-weight: bold;"> {{ medic.discount * 100 }}%</span></div>
         <div *ngIf="!clicked" class="btn btn--react btn--add" (click)="action()"><i class="fas fa-cart-plus"></i> Ajouter au panier</div>
         <div *ngIf="clicked" class="btn btn--react btn--remove" (click)="action()"><i class="fas fa-times-circle"></i> Enlever du panier</div>
     </div>

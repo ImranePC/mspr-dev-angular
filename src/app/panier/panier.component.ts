@@ -14,6 +14,7 @@ export class PanierComponent implements OnInit {
   @ViewChild('recapBox') recapBox!: ElementRef;
   @ViewChild('panierProcess') processBox!: ElementRef;
   prices: number[] = [];
+  discounts: number[] = [];
   totalPrice: number = 0;
   showPurchasePage: boolean = false;
   showLoadingPage: boolean = false;
@@ -48,12 +49,13 @@ export class PanierComponent implements OnInit {
     for (let i = 0; i < this.quantityPanier.length ; i++) {
       let price = this.panier[i].prix;
       let quantity = this.quantityPanier[i];
-      this.prices[i] = Math.round((price * quantity) * 1000) / 1000;
+      let discountRate = this.panier[i].discount;
+      this.prices[i] = Math.round((price * quantity + Number.EPSILON) * 100 * (1 - discountRate)) / 100;
     }
 
     // Array sum
     if (this.prices.length > 0) {
-      this.totalPrice = this.prices.reduce((a, b) => a + b);
+      this.totalPrice = Math.round(this.prices.reduce((a, b) => a + b) * 100) / 100;
     }
   }
 

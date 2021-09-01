@@ -7,6 +7,7 @@
     overflow: hidden;
     background: #fff;
     box-shadow: 0 5px 8px rgb(221, 221, 221);
+    margin-bottom: 20px;
 }
 
 .medic-box__image img {
@@ -39,6 +40,12 @@
 
 .btn--price {
     background-color: rgb(169, 176, 180);
+    padding: 8px;
+    color: #fff;
+}
+
+.btn--discount {
+    background-color: rgb(255, 122, 122);
     padding: 8px;
     color: #fff;
 }

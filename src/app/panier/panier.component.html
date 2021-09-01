@@ -19,7 +19,7 @@
             <div>
                 {{ medic.name }} - <span class="note"> {{ medic.prix }}€ unité </span><br>
                 <ng-container *ngIf="prices[index] == undefined">{{ medic.prix }}</ng-container>
-                <ng-container *ngIf="prices[index] != undefined">{{ prices[index] }}</ng-container> €
+                <ng-container *ngIf="prices[index] != undefined">{{ prices[index] }}</ng-container> € <ng-container *ngIf="medic.discount > 0"> <span style="color: red">- {{ medic.discount * 100 }}%</span> </ng-container>
             </div>
             <div>
                 <app-btn-quantity [index]="index" (updateQuantity)="setQuantity($event)"></app-btn-quantity>
